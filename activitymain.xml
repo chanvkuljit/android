@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img"
+        android:layout_centerInParent="true"
+        android:scaleType="matrix" />
+
+    <Button
+        android:id="@+id/btnScaleUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scale Up"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentStart="true"
+        android:onClick="scaleUp"/>
+
+    <Button
+        android:id="@+id/btnScaleDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scale Down"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/btnScaleUp"
+        android:layout_marginStart="20dp"
+        android:onClick="scaleDown"/>
+
+    <Button
+        android:id="@+id/btnRotateClockwise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rotate CW"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/btnScaleUp"
+        android:layout_alignParentStart="true"
+        android:onClick="rotateClockwise"/>
+
+    <Button
+        android:id="@+id/btnRotateCounterClockwise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rotate CCW"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/btnScaleDown"
+        android:layout_toEndOf="@id/btnRotateClockwise"
+        android:layout_marginStart="20dp"
+        android:onClick="rotateCounterClockwise"/>
+
+    <Button
+        android:id="@+id/btnZoomIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zoom In"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/btnRotateClockwise"
+        android:layout_alignParentStart="true"
+        android:onClick="zoomIn"/>
+
+    <Button
+        android:id="@+id/btnZoomOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zoom Out"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/btnRotateCounterClockwise"
+        android:layout_toEndOf="@id/btnZoomIn"
+        android:layout_marginStart="20dp"
+        android:onClick="zoomOut"/>
+
+    <Button
+        android:id="@+id/btnSetAlpha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Alpha"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/btnZoomIn"
+        android:layout_alignParentStart="true"
+        android:onClick="setAlpha"/>
+
+</RelativeLayout>
