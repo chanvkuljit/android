@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ToggleButton
+        android:id="@+id/tb"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="50dp"
+        android:textOff="Show"
+        android:textOn="Hide"
+        android:text="ToggleButton" />
+
+    <ImageView
+        android:id="@+id/imv"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:srcCompat="@android:drawable/alert_dark_frame" />
+
+
+</LinearLayout>
+
+
+**************************JAVA FILE******************************
+
+package com.example.imageview;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.ToggleButton;
+
+public class MainActivity extends AppCompatActivity implements  View.OnClickListener{
+
+    ToggleButton t;
+    ImageView i;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        t = findViewById(R.id.tb);
+        i = findViewById(R.id.imv);
+        t.setOnClickListener(this);
+        i.setVisibility(View.INVISIBLE);
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        if(t.getText().equals("Hide")){
+            i.setVisibility(View.VISIBLE);
+        }
+        else{
+            i.setVisibility(View.INVISIBLE);
+        }
+
+    }
+}
